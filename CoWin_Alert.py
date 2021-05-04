@@ -6,6 +6,7 @@ import sys
 import time
 import argparse
 import yaml
+import subprocess
 	
 def getAllStates() :
 	  
@@ -238,9 +239,15 @@ def main():
 	gp.add_argument('-f','--filter', type=str, default='config.yaml', help='Filter Config YAML file')
 	gp = ap.add_argument_group(morph("Get State and Dictrict ID"))
 	gp.add_argument('-i', action='store_true',help='Dump State ID and District ID')
+	gp.add_argument('-r', action='store_true',help='Ring the Alert')
 
 	args = ap.parse_args()
 	#print(args.filter)
+
+	if args.r :
+		audio_file = "./bell.wav"
+		return_code = subprocess.call(["afplay", audio_file])
+		exit()
 
 	if args.i :
 		print("Printing State and District IDs")
@@ -281,7 +288,7 @@ def main():
 
 		print("==============================")
 		
-	import subprocess
+	
 	audio_file = "./bell.wav"
 
 	return_code = subprocess.call(["afplay", audio_file])
