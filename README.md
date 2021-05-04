@@ -7,10 +7,9 @@
 
 Sample yaml format
 
-Search Criteria using PinCode Below is sample 
+## Search Criteria using PinCode Below is sample 
 '''
 pincodesearch:
-# Picode Search for 560066 from 5th May to 31th May
     -   pincode: 560066
         age: 60
         vaccine: 2
@@ -30,3 +29,6 @@ pincodesearch:
  > age : integer number age of person In case you want to filter out vaccine for 18+ only.
  > vaccine : enter 1 for COVAXIN 2 for COVISHIELD 3 for Any
  > date : should be in DD-MM-YYYY format (all digit)
+ > 
+
+Above Searches CoviShield vaccine availibility for 45+ on 5th 6th 7th May 2021 on pincode 560066
