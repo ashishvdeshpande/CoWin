@@ -5,9 +5,8 @@
 - This application searches availibility based on search criterial specified by user.
 - If there is vaccine availibility then it starts ringing bell.
 
-Sample yaml format
+Sample yaml format for Search Criteria using PinCode Below is sample 
 
-## Search Criteria using PinCode Below is sample 
 '''
 pincodesearch:
     -   pincode: 560066
