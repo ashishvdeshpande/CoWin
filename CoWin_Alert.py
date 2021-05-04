@@ -4,6 +4,8 @@
 import requests
 import sys
 import time
+import argparse
+import yaml
 	
 def getAllStates() :
 	  
@@ -105,7 +107,7 @@ def GetMeVaccineCenterForPin(pincode, ageLimit, vaccineType,date) :
 	# sending get request and saving the response as response object
 	r = requests.get(url = URL, params = PARAMS)
 
-	#print(URL+'?pincode='+pincode+'&date='+date)
+	print(URL+'?pincode='+pincode+'&date='+date)
 	url = URL+'?pincode='+pincode+'&date='+date
 	  
 	# extracting data in json format
@@ -167,7 +169,7 @@ def GetMeVaccineCenterForStateDistrict(state_id, district_id, ageLimit, vaccineT
 	# sending get request and saving the response as response object
 	r = requests.get(url = URL, params = PARAMS)
 
-	#print(URL+'?district_id='+district_id+'&date='+date)
+	print(URL+'?district_id='+district_id+'&date='+date)
 	url = URL+'?district_id='+district_id+'&date='+date
 	  
 	# extracting data in json format
@@ -224,11 +226,32 @@ def GetMeVaccineCenterForStateDistrict(state_id, district_id, ageLimit, vaccineT
 					#print("Not available")
 
 	return False
-	
+
+def morph(msg) :
+	return ("%s\n%s\n%s" % ("~"*80, ("~~ %s" % (msg)), "~"*79))	
 def main():
 	
-	import yaml
-	with open('config.yaml') as f:
+	ap = argparse.ArgumentParser(description='''Co-Win Appointment Booking App''', allow_abbrev=False, add_help = False)
+	gp = ap.add_argument_group(morph("Help"))
+	gp.add_argument('-h','--help', action='help', default=argparse.SUPPRESS, help='Show this messahe and exit')
+	gp = ap.add_argument_group(morph("Configure Filter"))
+	gp.add_argument('-f','--filter', type=str, default='config.yaml', help='Filter Config YAML file')
+	gp = ap.add_argument_group(morph("Get State and Dictrict ID"))
+	gp.add_argument('-i', action='store_true',help='Dump State ID and District ID')
+
+	args = ap.parse_args()
+	#print(args.filter)
+
+	if args.i :
+		print("Printing State and District IDs")
+		states = getAllStates()
+		print("Input State ID : ")
+		state_id = input()
+		districts = getAllDistricts(state_id)
+		print("Above are District IDs for State ID "+str(state_id))
+		exit()
+
+	with open(args.filter) as f:
 	    config = yaml.safe_load(f)
 	#print(str(config))
 
@@ -239,6 +262,7 @@ def main():
 
 		time.sleep(5)
 		count = count+1
+		print("==============================")
 		print("Checking Count : "+str(count))
 		
 		if 'pincodesearch' in config :
@@ -255,7 +279,8 @@ def main():
 					found = True
 					print(f"Hit Found on : State {state['state_id']} District {state['district_id']} vaccine {state['vaccine']} on date {state['date']} ")
 
-
+		print("==============================")
+		
 	import subprocess
 	audio_file = "./bell.wav"
 
