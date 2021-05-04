@@ -7,7 +7,7 @@
 
 Sample yaml format for Search Criteria using PinCode Below is sample 
 
-'''
+```
 pincodesearch:
     -   pincode: 560066
         age: 60
@@ -21,7 +21,7 @@ pincodesearch:
         age: 60
         vaccine: 2
         date: '07-05-2021'
- '''
+ ```
  
  > In above 
  > pincode : should be valid indian pincode
