@@ -23,7 +23,7 @@ pincodesearch:
         date: '07-05-2021'
  ```
  
- - In above 
+ In above 
  - pincode : should be valid indian pincode
  - age : integer number age of person In case you want to filter out vaccine for 18+ only.
  - vaccine : enter 1 for COVAXIN 2 for COVISHIELD 3 for Any
