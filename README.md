@@ -8,10 +8,13 @@
 ### Usage :
 Default command :  CoWin_Alert.py
 - Uses default config.yaml and start searching for availibility
+
 Custom search criteria :  CoWin_Alert.py -f=myconfig.yaml
 - Uses uswer specified config "myconfig.yaml" and start searching for availibility
+
 Get State and Districit ID : CoWin_Alert.py -i
 - Lists all State and District within state to be used in filter file
+
 Demo Alert : CoWin_Alert.py -r
 - Rings Alert.  Test mode to tune volume for alert
 
