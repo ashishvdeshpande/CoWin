@@ -63,3 +63,5 @@ stateSearch:
  - date : should be in DD-MM-YYYY format (all digit)
 
 Above Searches Any (COVISHILED/COVAXIN) vaccine availibility for 18+ on 5th 6th 7th May 2021 on in Karnataka state BBMP District.
+
+### You can have both serach criteria (based on PINCODE and State) in config.yaml. This app with alert if any one criteria is matched
