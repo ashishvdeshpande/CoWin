@@ -108,11 +108,16 @@ def GetMeVaccineCenterForPin(pincode, ageLimit, vaccineType,date) :
 	# sending get request and saving the response as response object
 	r = requests.get(url = URL, params = PARAMS)
 
-	print(URL+'?pincode='+pincode+'&date='+date)
+	#print(URL+'?pincode='+pincode+'&date='+date)
+	print('Checking Availibility for pincode : '+pincode+' On : '+date)
 	url = URL+'?pincode='+pincode+'&date='+date
 	  
-	# extracting data in json format
-	data = r.json()
+	try:  
+		# extracting data in json format
+		data = r.json()
+	except :
+		print("Request blocked. We can't connect to the server for this app or website at this time. There might be too much traffic or a configuration error. Try again later, or contact the app or website owner.")
+		return False
 
 	#print(data['centers'])
 
@@ -170,11 +175,16 @@ def GetMeVaccineCenterForStateDistrict(state_id, district_id, ageLimit, vaccineT
 	# sending get request and saving the response as response object
 	r = requests.get(url = URL, params = PARAMS)
 
-	print(URL+'?district_id='+district_id+'&date='+date)
+	#print(URL+'?district_id='+district_id+'&date='+date)
+	print("Checking Availibility for district_id : "+district_id+' On : '+date)
 	url = URL+'?district_id='+district_id+'&date='+date
-	  
-	# extracting data in json format
-	data = r.json()
+
+	try:  
+		# extracting data in json format
+		data = r.json()
+	except :
+		print("Request blocked. We can't connect to the server for this app or website at this time. There might be too much traffic or a configuration error. Try again later, or contact the app or website owner.")
+		return False
 
 	#print(data)
 	#print(data['centers'])
@@ -267,7 +277,7 @@ def main():
 
 	while not found :
 
-		time.sleep(5)
+		time.sleep(8)
 		count = count+1
 		print("==============================")
 		print("Checking Count : "+str(count))

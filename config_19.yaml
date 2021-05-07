@@ -1,0 +1,178 @@
+
+#vaccine value should be one of following
+#  1 : COVAXIN
+#  2 : COVISHIELD
+#  3 : Any
+
+#Date should be DD-MM-YYYY
+
+#state_id should be once of following
+
+
+stateSearch:
+# 18+ vaccine availibility for Bangalore anywhere from 5th 30th May
+    -   state_id:   16
+        district_id:    294
+        age: 38
+        vaccine: 3
+        date: '06-05-2021'
+    -   state_id:   16
+        district_id:    294
+        age: 38
+        vaccine: 3
+        date: '07-05-2021'
+    -   state_id:   16
+        district_id:    294
+        age: 38
+        vaccine: 3
+        date: '08-05-2021'
+    -   state_id:   16
+        district_id:    294
+        age: 38
+        vaccine: 3
+        date: '09-05-2021'
+    -   state_id:   16
+        district_id:    294
+        age: 38
+        vaccine: 3
+        date: '10-05-2021'
+    -   state_id:   16
+        district_id:    294
+        age: 38
+        vaccine: 3
+        date: '11-05-2021'
+    -   state_id:   16
+        district_id:    294
+        age: 38
+        vaccine: 3
+        date: '12-05-2021'
+    -   state_id:   16
+        district_id:    294
+        age: 38
+        vaccine: 3
+        date: '13-05-2021'
+    -   state_id:   16
+        district_id:    294
+        age: 38
+        vaccine: 3
+        date: '14-05-2021'
+        
+    -   state_id:   16
+        district_id:    294
+        age: 38
+        vaccine: 3
+        date: '15-05-2021'
+    -   state_id:   16
+        district_id:    294
+        age: 38
+        vaccine: 3
+        date: '16-05-2021'
+    -   state_id:   16
+        district_id:    294
+        age: 38
+        vaccine: 3
+        date: '17-05-2021'
+    -   state_id:   16
+        district_id:    294
+        age: 38
+        vaccine: 3
+        date: '18-05-2021'
+    -   state_id:   16
+        district_id:    294
+        age: 38
+        vaccine: 3
+        date: '19-05-2021'
+    -   state_id:   16
+        district_id:    294
+        age: 38
+        vaccine: 3
+        date: '20-05-2021'
+    -   state_id:   16
+        district_id:    294
+        age: 38
+        vaccine: 3
+        date: '21-05-2021'
+    -   state_id:   16
+        district_id:    294
+        age: 38
+        vaccine: 3
+        date: '22-05-2021'
+    -   state_id:   16
+        district_id:    294
+        age: 38
+        vaccine: 3
+        date: '23-05-2021'
+    -   state_id:   16
+        district_id:    294
+        age: 38
+        vaccine: 3
+        date: '24-05-2021'
+    -   state_id:   16
+        district_id:    294
+        age: 38
+        vaccine: 3
+        date: '25-05-2021'
+    -   state_id:   16
+        district_id:    294
+        age: 38
+        vaccine: 3
+        date: '26-05-2021'
+    -   state_id:   16
+        district_id:    294
+        age: 38
+        vaccine: 3
+        date: '27-05-2021'
+    -   state_id:   16
+        district_id:    294
+        age: 38
+        vaccine: 3
+        date: '28-05-2021'
+    -   state_id:   16
+        district_id:    294
+        age: 38
+        vaccine: 3
+        date: '29-05-2021'
+    -   state_id:   16
+        district_id:    294
+        age: 38
+        vaccine: 3
+        date: '30-05-2021'
+    
+#state_id : state
+#1 : Andaman and Nicobar Islands
+#2 : Andhra Pradesh
+#3 : Arunachal Pradesh
+#4 : Assam
+#5 : Bihar
+#6 : Chandigarh
+#7 : Chhattisgarh
+#8 : Dadra and Nagar Haveli
+#37 : Daman and Diu
+#9 : Delhi
+#10 : Goa
+#11 : Gujarat
+#12 : Haryana
+#13 : Himachal Pradesh
+#14 : Jammu and Kashmir
+#15 : Jharkhand
+#16 : Karnataka
+#17 : Kerala
+#18 : Ladakh
+#19 : Lakshadweep
+#20 : Madhya Pradesh
+#21 : Maharashtra
+#22 : Manipur
+#23 : Meghalaya
+#24 : Mizoram
+#25 : Nagaland
+#26 : Odisha
+#27 : Puducherry
+#28 : Punjab
+#29 : Rajasthan
+#30 : Sikkim
+#31 : Tamil Nadu
+#32 : Telangana
+#33 : Tripura
+#34 : Uttar Pradesh
+#35 : Uttarakhand
+#36 : West Bengal
