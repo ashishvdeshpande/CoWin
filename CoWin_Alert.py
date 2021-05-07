@@ -117,6 +117,8 @@ def GetMeVaccineCenterForPin(pincode, ageLimit, vaccineType,date) :
 		data = r.json()
 	except :
 		print("Request blocked. We can't connect to the server for this app or website at this time. There might be too much traffic or a configuration error. Try again later, or contact the app or website owner.")
+		print("Waiting for 60 sec....")
+		time.sleep(60)
 		return False
 
 	#print(data['centers'])
@@ -184,6 +186,8 @@ def GetMeVaccineCenterForStateDistrict(state_id, district_id, ageLimit, vaccineT
 		data = r.json()
 	except :
 		print("Request blocked. We can't connect to the server for this app or website at this time. There might be too much traffic or a configuration error. Try again later, or contact the app or website owner.")
+		print("Waiting for 60 sec....")
+		time.sleep(60)
 		return False
 
 	#print(data)
@@ -277,7 +281,7 @@ def main():
 
 	while not found :
 
-		time.sleep(8)
+		time.sleep(5)
 		count = count+1
 		print("==============================")
 		print("Checking Count : "+str(count))
@@ -288,6 +292,7 @@ def main():
 				if result :
 					found = True
 					print(f"Hit Found on : pincode {pinsearch['pincode']} age {pinsearch['age']} vaccine {pinsearch['vaccine']} on date {pinsearch['date']} ")
+				time.sleep(2)
 
 		if 'stateSearch' in config :
 			for state in config['stateSearch']:
@@ -295,7 +300,7 @@ def main():
 				if result :
 					found = True
 					print(f"Hit Found on : State {state['state_id']} District {state['district_id']} vaccine {state['vaccine']} on date {state['date']} ")
-
+				time.sleep(2)
 		print("==============================")
 		
 	
