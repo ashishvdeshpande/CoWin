@@ -15,21 +15,6 @@ stateSearch:
         district_id:    294
         age: 38
         vaccine: 3
-        date: '06-05-2021'
-    -   state_id:   16
-        district_id:    294
-        age: 38
-        vaccine: 3
-        date: '07-05-2021'
-    -   state_id:   16
-        district_id:    294
-        age: 38
-        vaccine: 3
-        date: '08-05-2021'
-    -   state_id:   16
-        district_id:    294
-        age: 38
-        vaccine: 3
         date: '09-05-2021'
     -   state_id:   16
         district_id:    294

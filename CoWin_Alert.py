@@ -1,5 +1,7 @@
 #!/Library/Frameworks/Python.framework/Versions/3.8/bin/python3
 
+# API https://apisetu.gov.in/public/api/cowin
+
 # importing the requests library
 import requests
 import sys
@@ -7,25 +9,32 @@ import time
 import argparse
 import yaml
 import subprocess
+import json
 	
 def getAllStates() :
-	  
+	
+	print("getAllStates")  
 	# api-endpoint
 	URL = "https://cdn-api.co-vin.in/api/v2/admin/location/states"
+	       #https://cdn-api.co-vin.in/api/v2/admin/location/states
 	  
 	# location given here
 	location = "delhi technological university"
 	  
 	# defining a params dict for the parameters to be sent to the API
 	PARAMS = {}
-	  
 	# sending get request and saving the response as response object
-	r = requests.get(url = URL, params = PARAMS)
-	  
+	#"user-agent : Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"
+	#r = requests.get("https://cdn-api.co-vin.in/api/v2/admin/location/states", headers={"user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"})
+	r = requests.get(url = URL, params = PARAMS, headers={"user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"})
+	#r = requests.get(url = URL, params = PARAMS)#, headers={"accept: application/json", "Accept-Language: hi_IN"})
+	print(r.text)  
 	# extracting data in json format
 	data = r.json()
-
-	#print(data['states'])
+	#data = r.text.json()
+	#data = json.loads(r.text)
+	print(str(data))
+	print(data['states'])
 
 	for state in data['states'] :
 		print(str(state['state_id']) + ' : '+ str(state['state_name']))
@@ -44,7 +53,7 @@ def getAllDistricts(state_id) :
 	PARAMS = {}
 	  
 	# sending get request and saving the response as response object
-	r = requests.get(url = URL, params = PARAMS)
+	r = requests.get(url = URL, params = PARAMS, headers={"user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"})
 	  
 	# extracting data in json format
 	data = r.json()
@@ -106,7 +115,7 @@ def GetMeVaccineCenterForPin(pincode, ageLimit, vaccineType,date) :
 	PARAMS = {'pincode':pincode,'date':date}
 	  
 	# sending get request and saving the response as response object
-	r = requests.get(url = URL, params = PARAMS)
+	r = requests.get(url = URL, params = PARAMS, headers={"user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"})
 
 	#print(URL+'?pincode='+pincode+'&date='+date)
 	print('Checking Availibility for pincode : '+pincode+' On : '+date)
@@ -175,7 +184,7 @@ def GetMeVaccineCenterForStateDistrict(state_id, district_id, ageLimit, vaccineT
 	PARAMS = {'district_id':district_id,'date':date}
 	  
 	# sending get request and saving the response as response object
-	r = requests.get(url = URL, params = PARAMS)
+	r = requests.get(url = URL, params = PARAMS, headers={"user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"})
 
 	#print(URL+'?district_id='+district_id+'&date='+date)
 	print("Checking Availibility for district_id : "+district_id+' On : '+date)
